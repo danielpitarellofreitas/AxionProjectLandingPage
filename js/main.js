@@ -1,23 +1,22 @@
 const allSections = document.querySelectorAll("section");
+const homeSection = document.querySelector("#home");
+const problemsSection = document.querySelector("#problems");
+const howItWorksSection = document.querySelector("#how-it-works");
+
 const navHome = document.getElementById("nav-home");
+const navHowItWorks = document.getElementById("nav-how-it-works");
+const navBenefits = document.getElementById("nav-benefits");
 
-function getCurrentSection() {
-  let sectionId;
-  const observer_section = new IntersectionObserver((sections) => {
-    sections.forEach((section) => {
-      if(section.isIntersecting){
-        return section.target.id;
-      };
-    });
+function start() {
+  window.history.scrollRestoration = "manual";
+
+  homeSection.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
   });
 
-
-  allSections.forEach((section) => {
-    observer_section.observe(section);
-  });
+  navHome.classList.add("selected-nav-link");
 }
 
-let currentSectionId = getCurrentSection();
-setTimeout(() => {
-  console.log(currentSectionId);
-}, 1000);
+window.addEventListener("DOMContentLoaded", start);
+
