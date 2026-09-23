@@ -449,6 +449,79 @@ section {
   }
 }
 
+/* How it works - style */
+.how-it-works {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #111827;
+}
+
+.how-it-works header {
+    color: var(--background);
+    padding: 10px;
+}
+
+.how-it-works .how-it-works-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+
+    color: var(--background);
+}
+
+.how-it-works .how-it-works-container .step {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 250px;
+
+    text-align: center;
+    font-size: clamp(0.5rem, 4vw, 0.9rem);
+}
+
+.how-it-works .how-it-works-container .step-number {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 50px;
+    height: 50px;
+
+    border: 0.5px solid var(--primary-color);
+    border-radius: 50%;
+
+    transition: all 0.2s ease;
+}
+
+.how-it-works .how-it-works-container .step-number:hover {
+  color: var(--dark-color);
+  background-color: var(--primary-color);
+}
+
+.how-it-works .how-it-works-container .step:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    top: 25px;
+    left: calc(50% + 25px);
+
+    width: calc(100% + 40px - 50px);
+    height: 1px;
+
+    background-color: #6e6e6e3e;
+}
+
 /* Resposive */
 @media (max-width: 768px) {
   .main-header nav {
@@ -546,4 +619,34 @@ section {
     transform: scale(1.0);
   }
 
+  .how-it-works .how-it-works-container {
+    flex-direction: column;
+    justify-content: start;
+    gap: 40px;
+  }
+
+  .how-it-works .how-it-works-container h3, .how-it-works .how-it-works-container p{
+    padding: 10px;
+    margin-top: 20px;
+
+    background-color: var(--dark-color);
+  }
+
+  .how-it-works .how-it-works-container .step {
+    width: 250px;
+    
+    z-index: 1;
+    background-color: var(--dark-color);
+  }
+
+  .how-it-works .how-it-works-container .step:not(:last-child)::after {
+      top: 50px;
+      left: 50%;
+
+      width: 1px;
+      height: calc(100%);
+
+      transform: translateX(-50%);
+      z-index: -1;
+  }
 }
