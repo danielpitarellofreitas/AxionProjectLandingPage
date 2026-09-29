@@ -21,10 +21,10 @@
 
 body {
   background-color: var(--background);
-  font-family: "DM Sans", serif, Arial, Helvetica, sans-serif;
+  font-family: "DM Sans", sans-serif, Arial, Helvetica, sans-serif;
   margin: 0;
   height: 100vh;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 
@@ -118,6 +118,8 @@ section {
     height: 100vh;
     overflow: auto;
     scroll-snap-type: y proximity;
+    
+    position: static;
 }
 
 .hero {
@@ -403,7 +405,192 @@ section {
 
 } 
 
-/* Headers Rules */
+
+/* How it works - style */
+.how-it-works {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    padding: 20px;
+    background-color: #111827;
+
+    z-index: 2;
+}
+
+.how-it-works header {
+    color: var(--background);
+    padding: 10px;
+
+    position: absolute;
+    top: 0;
+
+    margin-top: calc(var(--height-header-desktop) + 20px);
+    z-index: 1;
+}
+
+.how-it-works .how-it-works-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+
+    color: var(--background);
+}
+
+.how-it-works .how-it-works-container .step {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 250px;
+
+    text-align: center;
+    font-size: clamp(0.5rem, 4vw, 0.9rem);
+}
+
+.how-it-works .how-it-works-container .step-number {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 50px;
+    height: 50px;
+
+    border: 0.5px solid var(--primary-color);
+    border-radius: 50%;
+
+    transition: all 0.2s ease;
+}
+
+.how-it-works .how-it-works-container .step p {
+  color: #6d6d6d;
+}
+
+.how-it-works .how-it-works-container .step:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    top: 25px;
+    left: calc(50% + 25px);
+
+    width: calc(100% + 40px - 50px);
+    height: 1px;
+
+    background-color: #6e6e6e3e;
+}
+
+/* Benefits Screen - styles */
+.benefits {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  padding-top: calc(var(--height-header-desktop) + 12px);
+  
+  background-color: var(--dark-color);
+  color: var(--background);
+}
+
+.benefits header {
+  position: absolute;
+
+  top: 0;
+
+  margin-top: calc(var(--height-header-desktop) + 12px);
+}
+
+.benefits .what-use {
+  padding: 30px;
+  
+
+  width: max-content;
+
+  border-radius: 25px;
+  border: 1px solid var(--primary-color);
+}
+
+.benefits .what-use ul {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 40px;
+  gap: 20px;
+  font-style: oblique;
+}
+
+.benefits .what-use ul li::marker {
+  content: "✔ ";
+
+  margin-inline: 30px;
+
+  color: lime;
+}
+
+.benefits.content {
+  flex-direction: row;
+ 
+  height: max-content;
+  
+  padding: 20px;
+
+  margin-top: 40px;
+}
+
+.benefits .interessed-container {
+  display: flex;
+  flex-direction: column;
+
+  gap: 50px;
+
+  padding: 30px;
+  margin-left: 5px;
+
+  width: 100%;
+  height: max-content;
+
+  max-width: 300px;
+  min-height: 300px;
+
+  border-radius: 25px;
+  background-color: var(--primary-color);
+
+  text-align: center;
+}
+
+.benefits .interessed-container .button-learn-more {
+  padding: 13px;
+
+  border: none;
+  border-radius: 10px;
+
+  background-color: var(--background);
+
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: clamp(0.3rem, 4vw, 1.0rem);
+}
+
+/* Hover Rules */
 @media (hover: hover) and (pointer: fine) {
   .nav-interessed a:hover {
     background-color: var(--primary-color);
@@ -447,79 +634,11 @@ section {
     filter: brightness(120%);
     transform: scale(1.07);
   }
-}
 
-/* How it works - style */
-.how-it-works {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #111827;
-}
-
-.how-it-works header {
-    color: var(--background);
-    padding: 10px;
-}
-
-.how-it-works .how-it-works-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
-
-    color: var(--background);
-}
-
-.how-it-works .how-it-works-container .step {
-    position: relative;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    width: 250px;
-
-    text-align: center;
-    font-size: clamp(0.5rem, 4vw, 0.9rem);
-}
-
-.how-it-works .how-it-works-container .step-number {
-    position: relative;
-    z-index: 1;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 50px;
-    height: 50px;
-
-    border: 0.5px solid var(--primary-color);
-    border-radius: 50%;
-
-    transition: all 0.2s ease;
-}
-
-.how-it-works .how-it-works-container .step-number:hover {
-  color: var(--dark-color);
-  background-color: var(--primary-color);
-}
-
-.how-it-works .how-it-works-container .step:not(:last-child)::after {
-    content: "";
-
-    position: absolute;
-
-    top: 25px;
-    left: calc(50% + 25px);
-
-    width: calc(100% + 40px - 50px);
-    height: 1px;
-
-    background-color: #6e6e6e3e;
+  .how-it-works .how-it-works-container .step-number:hover {
+    color: var(--dark-color);
+    background-color: var(--primary-color);
+  }
 }
 
 /* Resposive */
@@ -648,5 +767,9 @@ section {
 
       transform: translateX(-50%);
       z-index: -1;
+  }
+
+  .benefits .content {
+    flex-direction: column;
   }
 }

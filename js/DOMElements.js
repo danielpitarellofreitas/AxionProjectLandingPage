@@ -10,3 +10,7 @@ export const navHome = document.getElementById("nav-home");
 export const navProblems = document.getElementById("nav-problems");
 export const navHowItWorks = document.getElementById("nav-how-it-works");
 export const navBenefits = document.getElementById("nav-benefits");
+
+export const buttonInteressed = document.getElementById("button-interessed");
+export const buttonHowItWorks = document.getElementById("button-how-it-works");
+export const buttonLearnMore  = document.getElementById("button-learn-more");
