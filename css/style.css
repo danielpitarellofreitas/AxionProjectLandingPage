@@ -588,6 +588,83 @@ section {
   color: var(--primary-color);
   font-weight: bold;
   font-size: clamp(0.3rem, 4vw, 1.0rem);
+
+  transition: all 0.3s ease;
+}
+
+/* About Project - styles */
+.about-project {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: space-between;
+  
+  padding: 40px;
+
+  color: var(--secundary-color);
+
+}
+
+.about-project header {
+  text-align: center;
+  margin-top: var(--height-header-desktop);
+}
+
+.about-project .about-project-content {
+  width: 100%;
+
+  font-size: clamp(0.4rem, 4vw, 1.2rem);
+}
+
+.about-project ul li {
+  margin-left: 40px;
+}
+
+.about-project .options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin-top: 40px;
+
+  width: 100%;
+}
+
+.about-project .options .option {
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+
+  text-align: center;
+
+}
+
+.about-project .options .option button {
+  max-width: max-content;
+
+  padding: 10px;
+
+  border: none;
+  border-radius: 10px;
+
+  background-color: var(--primary-color);
+  color: var(--background);
+
+  font-size: clamp(0.4rem, 4vw, 1.0rem);
+  font-weight: 550;
+
+  transition: all 0.4s ease;
+}
+
+.about-project .options .option .buttons {
+  display: flex;
+  gap:10px;
+
+  max-width: max-content;
 }
 
 /* Hover Rules */
@@ -639,6 +716,27 @@ section {
     color: var(--dark-color);
     background-color: var(--primary-color);
   }
+
+  .benefits .interessed-container .button-learn-more:hover {
+    filter: brightness(50%);
+
+    scale: 0.9;
+  }
+
+  .about-project .options {
+    padding: 0;
+    gap: 0;
+  }
+
+  .about-project .options .option button:hover {
+    background-color: var(--background);
+
+    color: var(--primary-color);
+
+    box-shadow: 10px 10px 10px #0000;
+
+    border: 0.1px var(--primary-color) solid;
+  }
 }
 
 /* Resposive */
@@ -678,7 +776,6 @@ section {
     height: max-content;
   }
 
- 
   .hero article h1,
   .hero article p {
     width: 100%;
@@ -771,5 +868,12 @@ section {
 
   .benefits .content {
     flex-direction: column;
+  }
+
+  .about-project .options {
+    flex-direction: column;
+    gap: 20px;
+    
+    margin-top: 20px;
   }
 }
