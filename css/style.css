@@ -8,9 +8,13 @@
   --dark-color: #111827;
   --light-dark: #3d3c3c;
 
+  --form-color: #1b1b1b;
+
 
   /* Sizes */
   --height-header-desktop: 5%;
+
+
 }
 
 * { 
@@ -666,6 +670,129 @@ section {
 
   max-width: max-content;
 }
+
+/* Form section - styles */
+.form-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--dark-color);
+}
+
+.form-section header {
+  justify-self: start;
+  
+  margin-bottom: 100px;
+
+  text-align: center;
+
+  color: var(--background);
+}
+
+.form-section header p {
+  color: #f2f3f4;
+}
+
+.form-section .form-section-content {
+  padding: 13px;
+
+  border-radius: 20px;
+  border: solid .2px var(--light-dark);
+
+  background-color: var(--form-color);
+
+}
+
+.form-section .form-section-content form {
+  display: flex; 
+  flex-direction: column;
+  gap: 20px;
+
+  max-width: 400px;
+
+  color: var(--background);
+
+  text-align: center;
+
+}
+
+.form-section .form-section-content .form-title {
+  text-align: center;
+  color: var(--background);
+
+  margin-block: 20px;
+}
+
+.form-section .form-section-content form .box-user{
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  height: max-content;
+
+  background: var(--form-color);
+
+}
+
+.form-section .form-section-content form .box-user input {
+  height: 50px;
+  padding-inline: 20px;
+
+  background-color: transparent;
+  border: solid 2px var(--light-dark);
+  border-radius: 10px;
+  outline: none;
+
+  color: var(--background);
+  caret-shape: block var(--primary-color);
+}
+
+.form-section .form-section-content form .box-user label {
+  color: var(--light-dark);
+
+  position: absolute;
+  margin-left: 20px;
+
+  transition: transform 0.3s ease;
+}
+
+.form-section .form-section-content form .box-user input:focus {
+  border-color: var(--primary-color);
+}
+
+.form-section .form-section-content form .box-user input:focus ~ label {  
+  background: inherit;
+  color: var(--primary-color);
+
+  padding: 2px;
+  padding-inline: 5px;
+
+  transform: translateY(-100%);
+}
+
+.form-section .form-section-content form .send-form {
+
+  height: 50px;
+
+  padding: 10px;
+
+  background-color: var(--background);
+  color: var(--primary-color);
+
+  border: none;
+  border-radius: 10px;
+
+  font-weight: 550;
+  font-size: clamp(.4rem, 4vw, 1.0rem);
+
+}
+
+
 
 /* Hover Rules */
 @media (hover: hover) and (pointer: fine) {

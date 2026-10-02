@@ -23,6 +23,5 @@ window.addEventListener("load", start);
 window.addEventListener("wheel", handleWheel);
 window.addEventListener("hashchange", selectNavButton);
 
-window.addEventListener("click", () => {setMainHeaderVisibility(undefined)})
-
+container.addEventListener("click", () => {setMainHeaderVisibility(undefined)});
 container.addEventListener("scroll", handleWheel);
