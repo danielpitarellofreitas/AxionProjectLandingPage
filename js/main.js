@@ -1,11 +1,13 @@
-import { selectNavButton, updateHash, handleHeaderVisibility } from './navigation.js';
+import { selectNavButton, updateHash, handleHeaderVisibility, getCurrentSection} from './navigation.js';
 import { navHome, homeSection, container } from './DOMElements.js';
-import { setMainHeaderVisibility } from './actions.js';
+import { setMainHeaderVisibility, updateWindowTitle } from './actions.js';
 
 
 function handleWheel() {
   updateHash();
+  updateWindowTitle();
   handleHeaderVisibility();
+
 }
 
 function start() {
