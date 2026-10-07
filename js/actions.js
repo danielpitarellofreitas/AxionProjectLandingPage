@@ -9,7 +9,24 @@ export function setMainHeaderVisibility(visible) {
   }
 }
 
+export function hideMobileMenu() {
+  element.mobileNavigation.classList.add("hide");
+  element.buttonHamburguerMenu.classList.remove("active");
+
+  element.container.style.overflow = "auto";
+  
+}
+
+export function showMobileMenu() {
+  element.mobileNavigation.classList.remove("hide");
+  element.buttonHamburguerMenu.classList.add("active");
+
+  element.container.style.overflow = "hidden";
+}
+
+
 export async function updateWindowTitle() {
   const currentSection = await MNavigation.getCurrentSection();
   document.title = `Axion Project - ${currentSection.id}`;
 }
+

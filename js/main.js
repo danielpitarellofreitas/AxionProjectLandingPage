@@ -1,6 +1,6 @@
 import { selectNavButton, updateHash, handleHeaderVisibility, getCurrentSection} from './navigation.js';
-import { navHome, homeSection, container } from './DOMElements.js';
-import { setMainHeaderVisibility, updateWindowTitle } from './actions.js';
+import { navHome, homeSection, container, buttonBackMobileMenu, buttonHamburguerMenu, links, linksContainer } from './DOMElements.js';
+import { setMainHeaderVisibility, updateWindowTitle, hideMobileMenu, showMobileMenu } from './actions.js';
 
 
 function handleWheel() {
@@ -27,3 +27,13 @@ window.addEventListener("hashchange", selectNavButton);
 
 container.addEventListener("click", () => {setMainHeaderVisibility(undefined)});
 container.addEventListener("scroll", handleWheel);
+
+buttonBackMobileMenu.addEventListener("click", hideMobileMenu);
+
+buttonHamburguerMenu.addEventListener("click", showMobileMenu);
+
+links.forEach((link) => {
+  link.addEventListener("click", () => {
+    hideMobileMenu();
+  })
+});

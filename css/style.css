@@ -126,13 +126,17 @@ body {
   padding-top: var(--height-header-desktop);
   position: fixed;
 
-  box-shadow: 4px 5px 500px 50px black;
+  box-shadow: 4px 2px 40px 200px rgba(0, 0, 0, 0.514);
 
   top: 0;
   
   background-color: var(--background);
 
   z-index: 9999;
+
+  transition: transform 0.5s ease;
+  transform-origin: top;
+  transform: scaleY(1);
 
 }
 
@@ -152,8 +156,7 @@ body {
 
   background-color: var(--background);
 
-  transition: transform 0.5s ease;
-  transform: scaleY(1);
+
 }
 
 .mobile-navigation.hide {
@@ -336,8 +339,7 @@ section {
 
 }
 
-.hero article button:active::before, 
-.hero article button:active {
+.hero article button:active::before {
     background-color: var(--dark-color);
 
     box-shadow: 0 0 20px var(--background);
@@ -1084,13 +1086,29 @@ section {
   }
 
   .main-header .burguer-menu {
-    display:contents;
+    display: flex;
+
     position: static;
     color: var(--primary-color);
+    background-color: transparent;
+
+    width: max-content;
+    height: max-content;
+
+    border: none;
   }
 
   .main-header .burguer-menu svg {
     fill: var(--background);
+
+    width: 35px;
+    height: 35px;
+
+    transition: filter 0.4s ease;
+  }
+
+  .main-header .burguer-menu.active svg{
+    filter: brightness(50%);
   }
 
   .hero {
@@ -1124,6 +1142,27 @@ section {
   .hero article h3 {
     width: 100%;
     text-align: center;
+  }
+
+  .hero article button {
+    user-select: none;
+  }
+
+  .hero article button:active::before {
+    transform: translate(-50%, -50%) scale(20);
+    box-shadow: 0 0 20px var(--background);
+    border-radius: 0;
+
+    background-color: transparent;
+
+  }
+
+  .hero article button:active {
+    color: var(--primary-color);
+    
+    box-shadow:
+      color-mix(in srgb, var(--primary-color) 100%, transparent) 0px 0px 0px,
+      color-mix(in srgb, var(--primary-color) 100%, transparent) 0px 0px 39px;
   }
 
   .problems-content {
