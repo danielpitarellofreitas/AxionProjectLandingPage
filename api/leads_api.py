@@ -1,6 +1,7 @@
 import psycopg
 from dotenv import load_dotenv
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 import os
@@ -12,6 +13,16 @@ class Lead(BaseModel):
   phone: str | None = None
 
 app = FastAPI()
+app.add_middleware(
+  CORSMiddleware,
+  allow_origins=[
+    "http://127.0.0.1:3000",
+    "http://localhost:3000"
+  ],
+  
+  allow_methods=["*"],
+  allow_headers=["*"]
+)
 
 load_dotenv()
 DATABASE_URL = os.environ.get("DATABASE_URL")
