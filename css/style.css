@@ -240,7 +240,7 @@ section {
 
 }
 
-.hero article {
+.hero .hero-content {
   display: flex;
   flex-direction: column;
  
@@ -269,24 +269,32 @@ section {
   height: auto;
 }
 
-
-
-
-.hero article h1 {
-  font-size: clamp(23pt, 5vw, 30pt);
-}
-
-.hero article h3 {
+.hero .hero-content .hero-eyebrow {
   color: var(--primary-color);
   font-size: clamp(4pt, 4vw, 15pt);
 }
 
-.hero article p {
+.hero .hero-content .hero-title {
+  font-size: clamp(23pt, 5vw, 30pt);
+}
+
+.hero .hero-content .hero-title strong {
+  color: var(--primary-color);
+  font-weight: 690;
+}
+
+
+.hero .hero-content .hero-description {
   color: var(--dark-color);
   font-size: clamp(12pt, 3vw, 15pt);
 }
 
-.hero article button {
+.hero .hero-content .hero-description strong {
+  color: var(--primary-color);
+  font-weight: 400;
+}
+
+.hero .hero-content .hero-button {
   overflow: hidden;
   position: relative;
   display: inline-block;
@@ -313,13 +321,14 @@ section {
   font-weight: 700;
 
   font-size: clamp(0.8rem, 4vw, 1.0rem);
+  text-align: center;
 
   box-shadow:
     color-mix(in srgb, var(--primary-color) 100%, transparent) 0px 0px 0px,
     color-mix(in srgb, var(--primary-color) 100%, transparent) 0px 0px 8px;
 }
 
-.hero article button::before {
+.hero .hero-content .hero-button::before {
   content: "";
   position: absolute;
   
@@ -339,7 +348,7 @@ section {
 
 }
 
-.hero article button:active::before {
+.hero .hero-content .hero-button:active::before {
     background-color: var(--dark-color);
 
     box-shadow: 0 0 20px var(--background);
@@ -347,22 +356,13 @@ section {
     
 }
 
-.hero article button:active {
+.hero .hero-content .hero-button:active {
   color: var(--background) !important;
   border: none;
 
   box-shadow: 
     color-mix(in srgb, var(--dark-color) 100%, transparent) 0px 0px 0px,
     color-mix(in srgb, var(--dark-color) 100%, transparent) 0px 0px 8px !important;
-}
-
-.hero article p strong {
-  font-weight: 400;
-}
-
-.hero article strong {
-  color: var(--primary-color);
-  font-weight: 690;
 }
 
 
@@ -747,7 +747,7 @@ section {
 
 }
 
-.about-project .options .option button {
+.about-project .options .option .button {
   max-width: max-content;
 
   padding: 10px;
@@ -762,6 +762,9 @@ section {
   font-weight: 550;
 
   transition: all 0.4s ease;
+  user-select: none;
+
+  cursor: pointer;
 }
 
 .about-project .options .option .buttons {
@@ -1010,14 +1013,14 @@ section {
     color: var(--background);
   }
 
-  .hero article button:hover::before {
+  .hero .hero-content .hero-button:hover::before {
     transform: translate(-50%, -50%) scale(20);
     box-shadow: 0 0 20px var(--background);
     border-radius: 0;
 
   }
 
-  .hero article button:hover {
+  .hero .hero-content .hero-button:hover {
     color: var(--primary-color);
     box-shadow:
       color-mix(in srgb, var(--primary-color) 100%, transparent) 0px 0px 0px,
@@ -1064,7 +1067,7 @@ section {
     gap: 0;
   }
 
-  .about-project .options .option button:hover {
+  .about-project .options .option .button:hover {
     background-color: var(--background);
 
     color: var(--primary-color);
@@ -1078,7 +1081,7 @@ section {
 /* Resposive */
 @media (max-width: 768px) {
   :root {
-    --height-header-desktop: 100px;
+    --height-header-desktop: 60px;
   }
 
   .main-header nav {
@@ -1117,7 +1120,7 @@ section {
 
   }
 
-  .hero article {
+  .hero .hero-content {
     align-items: center;
     top: 20px;
   }
@@ -1132,23 +1135,23 @@ section {
     height: max-content;
   }
 
-  .hero article h1,
-  .hero article p {
+  .hero .hero-content .hero-title,
+  .hero .hero-content .hero-description {
     width: 100%;
     text-align: center;
     padding: 5px;
   }
 
-  .hero article h3 {
+  .hero .hero-content .hero-eyebrow {
     width: 100%;
     text-align: center;
   }
 
-  .hero article button {
+  .hero .hero-content .hero-button {
     user-select: none;
   }
 
-  .hero article button:active::before {
+  .hero .hero-content .hero-button:active::before {
     transform: translate(-50%, -50%) scale(20);
     box-shadow: 0 0 20px var(--background);
     border-radius: 0;
@@ -1157,7 +1160,7 @@ section {
 
   }
 
-  .hero article button:active {
+  .hero .hero-content .hero-button:active {
     color: var(--primary-color);
     
     box-shadow:
@@ -1188,10 +1191,6 @@ section {
     height: 100%;
     
     font-size: clamp(0.4rem, 4vw, 0.7rem);
-  }
-
-  .problems footer {
-    
   }
 
   .problems .footer-problems-text {

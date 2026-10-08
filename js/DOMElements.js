@@ -11,6 +11,8 @@ export const navProblems = document.getElementById("nav-problems");
 export const navHowItWorks = document.getElementById("nav-how-it-works");
 export const navBenefits = document.getElementById("nav-benefits");
 
+export const allLinks = document.querySelectorAll("a");
+
 export const buttonInteressed     = document.getElementById("button-interessed");
 export const buttonHowItWorks     = document.getElementById("button-how-it-works");
 export const buttonLearnMore      = document.getElementById("button-learn-more");

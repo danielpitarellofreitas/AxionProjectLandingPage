@@ -1,5 +1,5 @@
 import { selectNavButton, updateHash, handleHeaderVisibility, getCurrentSection} from './navigation.js';
-import { navHome, homeSection, container, buttonBackMobileMenu, buttonHamburguerMenu, links, linksContainer } from './DOMElements.js';
+import { navHome, homeSection, container, buttonBackMobileMenu, buttonHamburguerMenu, links, linksContainer, allLinks } from './DOMElements.js';
 import { setMainHeaderVisibility, updateWindowTitle, hideMobileMenu, showMobileMenu } from './actions.js';
 
 
@@ -37,3 +37,20 @@ links.forEach((link) => {
     hideMobileMenu();
   })
 });
+
+allLinks.forEach(link => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    const href = link.href;
+
+    setTimeout(() => {
+      if (link.target === "_blank") {
+        window.open(href, "_blank");
+      } else {
+        window.location.href = href;
+      }
+    }, 500);
+  });
+});
+

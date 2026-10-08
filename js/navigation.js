@@ -66,12 +66,11 @@ export function selectNavButton(){
   if (previousLink) {
     previousLink.classList.remove('selected-nav-link');
   }
+
+  const currentLink = document.querySelector(`[href="${location.hash}"]`)
   
-  if (location.hash !== '#problems'){
-    const currentLink = document.querySelector(`[href="${location.hash}"]`)
-    if (currentLink) {
-      currentLink.classList.add('selected-nav-link');
-    }
+  if (currentLink) {
+    currentLink.classList.add('selected-nav-link');
   }
 }
 
