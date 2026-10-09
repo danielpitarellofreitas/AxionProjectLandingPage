@@ -1,6 +1,6 @@
 import { selectNavButton, updateHash, handleHeaderVisibility, getCurrentSection, handleLeadsInputs} from './navigation.js';
 import { navHome, homeSection, container, buttonBackMobileMenu, buttonHamburguerMenu, links, linksContainer, allLinks, formBoxUser, formLeadsData, formInputName, formInputEmail, formInputPhone, formInputBusiness } from './DOMElements.js';
-import { setMainHeaderVisibility, updateWindowTitle, hideMobileMenu, showMobileMenu } from './actions.js';
+import { setMainHeaderVisibility, updateWindowTitle, hideMobileMenu, showMobileMenu, validateInputs } from './actions.js';
 import { handleFormData } from './data_process.js';
 
 
@@ -8,7 +8,6 @@ function handleWheel() {
   updateHash();
   updateWindowTitle();
   handleHeaderVisibility();
-
 }
 
 function start() {
@@ -62,34 +61,32 @@ allLinks.forEach(link => {
 // console.log(event.target.id)
 //});
 
+formBoxUser.forEach((boxUser) => {
+  const input = boxUser.firstElementChild.tagName == "INPUT" ? boxUser.firstElementChild : false;
+  
+  if(!input) 
+    return;
+  else {
+    let isEmpty;
+
+    input.addEventListener("input", () => {
+      isEmpty = input.value === "" ? false : true
+      isEmpty ? input.classList.add("has-value") : input.classList.remove("has-value");
+    });
+  }
+});
 
 formLeadsData.addEventListener("submit", async (event) => {
-  event.preventDefault();
-  
-  const requiredData = [
-    formInputName, 
-    formInputEmail,
-    formInputBusiness
-  ];
-
-  let isValidData = true;
-  requiredData.forEach(data => {
-    const label   = document.querySelector(`[for=${data.id}]`);
-    const isEmpty = data.value.trim() === "";
-
-    data.style.borderColor = isEmpty ? "red" : "";
-
-    if(label) {
-      label.style.color = isEmpty ? "red" : "";
-    }
-
-    if(isEmpty) {
-      isValidData = false;
-    };
+    event.preventDefault();
+    const requiredData = [
+      formInputName, 
+      formInputEmail,
+      formInputBusiness
+    ];
     
-  });
-
-  if (!isValidData) return;
+    const isValidData = validateInputs(requiredData);
+    
+    if (!isValidData) return;
 
   const formData = new FormData(formLeadsData);
 

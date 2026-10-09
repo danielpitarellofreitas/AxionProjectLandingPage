@@ -864,11 +864,18 @@ section {
   transition: transform 0.3s ease;
 }
 
-.form-section .form-section-content form .box-user input:focus {
+.form-section .form-section-content form .box-user input:focus,
+.form-section .form-section-content form .box-user input.has-value{
   border-color: var(--primary-color);
 }
 
-.form-section .form-section-content form .box-user input:focus ~ label {  
+.form-section .form-section-content form .box-user input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--dark-color) inset;
+  -webkit-text-fill-color: var(--primary-color);
+}
+
+.form-section .form-section-content form .box-user input:focus ~ label,
+.form-section .form-section-content form .box-user input.has-value ~ label {  
   background: inherit;
   color: var(--primary-color);
 
