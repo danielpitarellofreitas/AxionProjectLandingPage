@@ -6,12 +6,15 @@ export const mainHeader = document.getElementById("main-header");
 
 export const container = document.querySelector(".container");
 
+
 export const navHome  = document.getElementById("nav-home");
 export const navProblems = document.getElementById("nav-problems");
 export const navHowItWorks = document.getElementById("nav-how-it-works");
 export const navBenefits = document.getElementById("nav-benefits");
 
+
 export const allLinks = document.querySelectorAll("a");
+
 
 export const buttonInteressed     = document.getElementById("button-interessed");
 export const buttonHowItWorks     = document.getElementById("button-how-it-works");
@@ -19,6 +22,21 @@ export const buttonLearnMore      = document.getElementById("button-learn-more")
 export const buttonBackMobileMenu = document.getElementById("button-back-mobile-nav");
 export const buttonContributte    = document.getElementById("button-contributte");
 export const buttonHamburguerMenu = document.getElementById("hamburguer-button");
+
+
+export const formLeadsData     = document.querySelector('#form-data');
+export const formBoxUser       = formLeadsData.querySelectorAll(".box-user");
+
+export const formInputName     = document.getElementById("input-name");
+export const formInputEmail    = document.getElementById("input-email");
+export const formInputPhone    = document.getElementById("input-phone");
+export const formInputBusiness = document.getElementById("input-business");
+
+export const formLabelName     = document.querySelector("[for=input-name]");
+export const formLabelEmail    = document.querySelector("[for=input-email]");
+export const formLabelPhone    = document.querySelector("[for=input-phone]");
+export const formLabelBusiness = document.querySelector("[for=input-business]");
+
 
 export const mobileNavigation = document.getElementById("mobile-navigation");
 export const linksContainer = document.querySelector("#navigation-container");

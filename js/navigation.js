@@ -74,3 +74,14 @@ export function selectNavButton(){
   }
 }
 
+export function handleLeadsInputs(element=undefined) {
+  if(element === undefined) {
+    return "handleLeadsInputs: error, the element is undefined"
+  }
+
+  if(element.tagName == "INPUT") {
+    const input = elements.formLeadsData.querySelector(`#${element.id}`);
+    input.value;
+  }
+}
+

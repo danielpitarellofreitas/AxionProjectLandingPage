@@ -1,6 +1,7 @@
-import { selectNavButton, updateHash, handleHeaderVisibility, getCurrentSection} from './navigation.js';
-import { navHome, homeSection, container, buttonBackMobileMenu, buttonHamburguerMenu, links, linksContainer, allLinks } from './DOMElements.js';
+import { selectNavButton, updateHash, handleHeaderVisibility, getCurrentSection, handleLeadsInputs} from './navigation.js';
+import { navHome, homeSection, container, buttonBackMobileMenu, buttonHamburguerMenu, links, linksContainer, allLinks, formBoxUser, formLeadsData, formInputName, formInputEmail, formInputPhone, formInputBusiness } from './DOMElements.js';
 import { setMainHeaderVisibility, updateWindowTitle, hideMobileMenu, showMobileMenu } from './actions.js';
+import { handleFormData } from './data_process.js';
 
 
 function handleWheel() {
@@ -52,5 +53,61 @@ allLinks.forEach(link => {
       }
     }, 500);
   });
+});
+
+
+// em dev
+//formBoxUser.forEach((element))
+//formBoxUser.addEventListener("input", (event) => {
+// console.log(event.target.id)
+//});
+
+
+formLeadsData.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  
+  const requiredData = [
+    formInputName, 
+    formInputEmail,
+    formInputBusiness
+  ];
+
+  let isValidData = true;
+  requiredData.forEach(data => {
+    const label   = document.querySelector(`[for=${data.id}]`);
+    const isEmpty = data.value.trim() === "";
+
+    data.style.borderColor = isEmpty ? "red" : "";
+
+    if(label) {
+      label.style.color = isEmpty ? "red" : "";
+    }
+
+    if(isEmpty) {
+      isValidData = false;
+    };
+    
+  });
+
+  if (!isValidData) return;
+
+  const formData = new FormData(formLeadsData);
+
+  try {
+    const [success, result] = await handleFormData(formData);
+
+    console.log("Sucesso:", success);
+    console.log("Resposta:", result);
+
+    if (success) {
+      alert("Dados enviados com sucesso!");
+    } else {
+      alert("A API recusou os dados.");
+      console.error("Resposta da API:", result);
+    }
+  } catch (error) {
+    console.error("Erro ao enviar:", error);
+    alert("Não foi possível enviar os dados.");
+  }
 });
 
