@@ -21,6 +21,23 @@ function start() {
   navHome.classList.add("selected-nav-link");
 }
 
+function phoneFormat(input){
+  let inputValue = input.replace(/\D/g, "").slice(0, 11);
+
+  if(inputValue.length > 7) {
+    inputValue = inputValue.replace(/^(\d{2})(\d{5})(\d{0,4})/, "($1) $2-$3");
+  }
+
+  else if(inputValue.length > 6) {
+    inputValue = inputValue.replace(/^(\d{2})(\d{5})/, "($1) $2");
+  }
+
+  else if(inputValue.length > 0) {
+    inputValue = inputValue.replace(/^(\d{0,2})/, "($1)");
+  }
+  return inputValue;
+}
+
 window.addEventListener("load", start);
 window.addEventListener("wheel", handleWheel);
 window.addEventListener("hashchange", selectNavButton);
@@ -63,14 +80,15 @@ allLinks.forEach(link => {
 
 formBoxUser.forEach((boxUser) => {
   const input = boxUser.firstElementChild.tagName == "INPUT" ? boxUser.firstElementChild : false;
-  
   if(!input) 
     return;
   else {
     let isEmpty;
-
+    
     input.addEventListener("input", () => {
-      isEmpty = input.value === "" ? false : true
+      input.value = input.id == "input-phone" ? phoneFormat(input.value)  : input.value;
+
+      isEmpty = input.value === "" ? false : true;
       isEmpty ? input.classList.add("has-value") : input.classList.remove("has-value");
     });
   }
@@ -78,6 +96,7 @@ formBoxUser.forEach((boxUser) => {
 
 formLeadsData.addEventListener("submit", async (event) => {
     event.preventDefault();
+
     const requiredData = [
       formInputName, 
       formInputEmail,

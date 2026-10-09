@@ -48,6 +48,5 @@ export function validateInputs(requiredData) {
     };
   });
 
-  if (!isValidData) 
-    return false;
+  return isValidData;
 }
