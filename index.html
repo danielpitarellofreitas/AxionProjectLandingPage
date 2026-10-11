@@ -10,6 +10,14 @@
 </head>
 
 <body>
+    <div class="msg-box-container">
+        <article class="msg-box">
+            <h3 class="msg-title">Title</h3>
+            <p class="msg-content">This is a messageBox to user.</p>
+            <button class="msg-button">OK</button>
+        </article>
+    </div>
+
     <header class="main-header" id="main-header">
         <div class="logo">
             <img src="assets/images/logo-axion-project.png" alt="">
@@ -262,22 +270,22 @@
                 <h2 class="form-title">Seja notificado</h2>
                 <form action="" name="form_data" id="form-data">
                     <div class="box-user">
-                        <input type="text" name="input-name" id="input-name">
+                        <input type="text" name="input-name" id="input-name" minlength="2" maxlength="254" required>
                         <label for="input-name">Nome</label>
                     </div>
 
                     <div class="box-user">
-                        <input type="text" name="input-business" id="input-business">
+                        <input type="text" name="input-business" id="input-business" minlength="5" maxlength="254" required>
                         <label for="input-business">Seu Negócio</label>
                     </div>
 
                     <div class="box-user">
-                        <input type="tel" name="input-phone" id="input-phone">
+                        <input type="tel" name="input-phone" id="input-phone" maxlength="20">
                         <label for="input-phone">Telefone</label>
                     </div>
                     
                     <div class="box-user">
-                        <input type="email" name="input-email" id="input-email">
+                        <input type="email" name="input-email" id="input-email" minlength="200" maxlength="254" required>
                         <label for="input-email">Email</label>
                     </div>
 
