@@ -4,14 +4,17 @@ import psycopg
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import BaseModel, ConfigDict, EmailStr, Field
 
 
 class Lead(BaseModel):
+  model_config = ConfigDict(str_strip_whitespace=True)
+  
   name: str = Field(min_length=2, max_length=255)
   email: EmailStr = Field(min_length=6, max_length=254)
   business: str = Field(min_length=5, max_length=150) 
-  phone: str | None = Field(default=None, max_length=11)
+  phone: str | None = Field(default=None, max_length=20)
+
 
 app = FastAPI()
 app.add_middleware(
