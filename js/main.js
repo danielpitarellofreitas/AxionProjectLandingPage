@@ -100,37 +100,59 @@ formLeadsData.addEventListener("submit", async (event) => {
 
   if(isSubmiting) return;
   isSubmiting = true;
-  
-  
+ 
+  await messageBox({
+    title: "Dados enviados!",
+    content: "Seus dados foram enviados! Aguarde um momento.",
+    buttonText: "Ok"
+  });
+
   const requiredData = [
-  formInputName, 
-  formInputEmail,
-  formInputBusiness
+    formInputName, 
+    formInputEmail,
+    formInputBusiness
   ];
-  
   const isValidData = validateInputs(requiredData);
   
-  if (!isValidData) return;
+  if (!isValidData) {
+    isSubmiting = false;
+    return;
+  }
   
   const formData = new FormData(formLeadsData);
 
-  try {
+  let statusMessage;
+  try { 
     const [success, result] = await handleFormData(formData);
 
     console.log("Sucesso:", success);
     console.log("Resposta:", result);
 
     if (success) {
-      alert("Dados enviados com sucesso!");
+      statusMessage = {
+        title: `Bem-vindo ${formData.get("input-name")}`,
+        content: `Olá, ${formData.get("input-name").trim().split(" ")[0]}! Ficamos felizes que gostou do projeto. Fique atento ao seu email ou WhatsApp para ficar por dentro das novidades!`,
+        buttonText: "OK"
+      }
     } else {
       const message = handleApiDatavalidation(result);
-      alert(message);
+      statusMessage = {
+        title: "Erro",
+        content: message,
+        buttonText: 'OK'
+      }
     }
   } catch (error) {
-      console.error("Erro ao enviar:", error);
-      alert("Não foi possível enviar os dados.");
+      statusMessage = {
+        title: "Erro Interno",
+        content: "Houve uma falha de conexão, ou problemas de comunicação em nossos servidores. Pedimos q tente novamente!",
+        buttonText: "OK"
+
+      }
   } finally {
       isSubmiting = false;
+      await messageBox(statusMessage);
   } 
 });
+
 
