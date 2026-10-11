@@ -10,8 +10,8 @@ from pydantic import BaseModel, EmailStr, Field
 class Lead(BaseModel):
   name: str = Field(min_length=2, max_length=255)
   email: EmailStr = Field(min_length=6, max_length=254)
-  business: str | None = Field(max_length=150) 
-  phone: str | None = Field(max_length=11)
+  business: str = Field(min_length=5, max_length=150) 
+  phone: str | None = Field(default=None, max_length=11)
 
 app = FastAPI()
 app.add_middleware(
