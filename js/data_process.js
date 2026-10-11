@@ -36,3 +36,35 @@ export async function sendData(lead){
 
   return response;
 }
+
+
+// Resposta da api
+export function handleApiDatavalidation(response) {
+  let message;
+  const error = response.detail[0];
+
+
+  const inputType = document.querySelector(
+    `[for="input-${error.loc[1]}"]`
+  );
+
+  if(response.detail.length == 1) {
+    
+    switch(error.type) {
+      case "string_too_long":
+      case "too_long":
+        message = `O campo de "${inputType.textContent}" nao pode conter mais que ${error.ctx.max_length} caracteres.`;
+        break;
+
+      case "string_too_short": 
+      case "too_short":
+        message = `O campo de "${inputType.textContent}" nao pode conter menos que ${error.ctx.min_length} caracteres.`;
+        break;
+      
+      default:
+        message = "Houve um erro inesperado.";
+    } 
+  }
+  return message;
+
+}

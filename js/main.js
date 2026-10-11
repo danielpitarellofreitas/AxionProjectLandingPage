@@ -1,7 +1,7 @@
 import { selectNavButton, updateHash, handleHeaderVisibility, getCurrentSection, handleLeadsInputs} from './navigation.js';
 import { navHome, homeSection, container, buttonBackMobileMenu, buttonHamburguerMenu, links, linksContainer, allLinks, formBoxUser, formLeadsData, formInputName, formInputEmail, formInputPhone, formInputBusiness } from './DOMElements.js';
-import { setMainHeaderVisibility, updateWindowTitle, hideMobileMenu, showMobileMenu, validateInputs } from './actions.js';
-import { handleFormData } from './data_process.js';
+import { setMainHeaderVisibility, updateWindowTitle, hideMobileMenu, showMobileMenu, validateInputs, messageBox } from './actions.js';
+import { handleFormData, handleApiDatavalidation } from './data_process.js';
 
 
 function handleWheel() {
@@ -94,19 +94,24 @@ formBoxUser.forEach((boxUser) => {
   }
 });
 
+let isSubmiting = false;
 formLeadsData.addEventListener("submit", async (event) => {
-    event.preventDefault();
+  event.preventDefault(); 
 
-    const requiredData = [
-      formInputName, 
-      formInputEmail,
-      formInputBusiness
-    ];
-    
-    const isValidData = validateInputs(requiredData);
-    
-    if (!isValidData) return;
-
+  if(isSubmiting) return;
+  isSubmiting = true;
+  
+  
+  const requiredData = [
+  formInputName, 
+  formInputEmail,
+  formInputBusiness
+  ];
+  
+  const isValidData = validateInputs(requiredData);
+  
+  if (!isValidData) return;
+  
   const formData = new FormData(formLeadsData);
 
   try {
@@ -118,12 +123,14 @@ formLeadsData.addEventListener("submit", async (event) => {
     if (success) {
       alert("Dados enviados com sucesso!");
     } else {
-      alert("A API recusou os dados.");
-      console.error("Resposta da API:", result);
+      const message = handleApiDatavalidation(result);
+      alert(message);
     }
   } catch (error) {
-    console.error("Erro ao enviar:", error);
-    alert("Não foi possível enviar os dados.");
-  }
+      console.error("Erro ao enviar:", error);
+      alert("Não foi possível enviar os dados.");
+  } finally {
+      isSubmiting = false;
+  } 
 });
 
