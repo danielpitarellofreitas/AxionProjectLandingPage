@@ -41,3 +41,5 @@ export const formLabelBusiness = document.querySelector("[for=input-business]");
 export const mobileNavigation = document.getElementById("mobile-navigation");
 export const linksContainer = document.querySelector("#navigation-container");
 export const links = linksContainer.querySelectorAll(".links .link");
+
+export const messageContainer = document.querySelector(".msg-box-container");

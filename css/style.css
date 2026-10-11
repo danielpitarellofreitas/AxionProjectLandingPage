@@ -1016,7 +1016,7 @@ section {
 
 /* MessageBox */
 .msg-box-container {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 
@@ -1058,6 +1058,10 @@ section {
     inset 0 1px 1px #bfbdbd60,
     inset 0 -1px 1px #ffffff15,
     0 8px 32px #00000020;
+}
+
+.msg-box-container hr {
+  width: 80%;
 }
 
 .msg-box-container .msg-box .msg-button {

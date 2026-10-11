@@ -50,3 +50,26 @@ export function validateInputs(requiredData) {
 
   return isValidData;
 }
+
+export function messageBox(message, command=() => {
+  element.messageContainer.classList.remove("show");
+
+  setTimeout(() => {
+    element.messageContainer.style.display = "none";
+  }, 2000);
+
+}) {
+
+  document.querySelector(".msg-title").textContent   = message.title;
+  document.querySelector(".msg-content").textContent = message.content;
+  document.querySelector(".msg-button").textContent  = message.textButton;
+  
+  element.messageContainer.style.display = "flex"; 
+  setTimeout(() => {
+    element.messageContainer.classList.add("show");
+  }, 2000);
+
+  
+  document.querySelector(".msg-button").addEventListener("click", command);
+
+}
