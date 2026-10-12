@@ -1,3 +1,7 @@
+import { validateInputs } from "./actions.js";
+import { formInputName, formInputEmail, formInputBusiness } from "./DOMElements.js";
+import { isSubmiting, setIsSubmiting } from "./state.js";
+
 export async function handleFormData(formData){
   const lead = {
     "name": formData.get("input-name"),
@@ -13,14 +17,11 @@ export async function handleFormData(formData){
     if(!response.ok) {
       return [false, data];
     }
-    
     return [true, data];
-
   } catch (error) {
-      console.log("falha na requisição: ", error);
+      console.log("Falha na requisição.");
       throw error;
   }
-  
 }
 
 export async function sendData(lead){
@@ -67,4 +68,17 @@ export function handleApiDatavalidation(response) {
   }
   return message;
 
+}
+
+export function handleFormSubmission() {
+  const requiredData = [
+    formInputName, 
+    formInputEmail,
+    formInputBusiness
+  ];
+
+  const validData = validateInputs(requiredData);
+  setIsSubmiting(validData);
+
+  return isSubmiting;
 }

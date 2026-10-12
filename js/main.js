@@ -1,7 +1,8 @@
 import { selectNavButton, updateHash, handleHeaderVisibility, getCurrentSection, handleLeadsInputs} from './navigation.js';
 import { navHome, homeSection, container, buttonBackMobileMenu, buttonHamburguerMenu, links, linksContainer, allLinks, formBoxUser, formLeadsData, formInputName, formInputEmail, formInputPhone, formInputBusiness } from './DOMElements.js';
-import { setMainHeaderVisibility, updateWindowTitle, hideMobileMenu, showMobileMenu, validateInputs, messageBox } from './actions.js';
-import { handleFormData, handleApiDatavalidation } from './data_process.js';
+import { setMainHeaderVisibility, updateWindowTitle, hideMobileMenu, showMobileMenu, validateInputs, messageBox, handleApiRequest } from './actions.js';
+import { handleFormData, handleApiDatavalidation, handleFormSubmission } from './data_process.js';
+import { isSubmiting, setIsSubmiting } from './state.js'
 
 
 function handleWheel() {
@@ -19,6 +20,31 @@ function start() {
   });
 
   navHome.classList.add("selected-nav-link");
+}
+
+async function handleSubmit(e) {
+  e.preventDefault(); 
+
+  if(isSubmiting) return;
+
+  setIsSubmiting(true);
+
+  const isValidForm = handleFormSubmission();
+
+  if(!isValidForm) return;
+
+  try {
+    await messageBox({
+      title: "Dados enviados!",
+      content: "Seus dados foram enviados! Aguarde um momento.",
+      buttonText: "Ok"
+    });
+  
+    await handleApiRequest();
+
+  } finally {
+    setIsSubmiting(false);
+  }
 }
 
 function phoneFormat(input){
@@ -94,65 +120,7 @@ formBoxUser.forEach((boxUser) => {
   }
 });
 
-let isSubmiting = false;
-formLeadsData.addEventListener("submit", async (event) => {
-  event.preventDefault(); 
 
-  if(isSubmiting) return;
-  isSubmiting = true;
- 
-  await messageBox({
-    title: "Dados enviados!",
-    content: "Seus dados foram enviados! Aguarde um momento.",
-    buttonText: "Ok"
-  });
-
-  const requiredData = [
-    formInputName, 
-    formInputEmail,
-    formInputBusiness
-  ];
-  const isValidData = validateInputs(requiredData);
-  
-  if (!isValidData) {
-    isSubmiting = false;
-    return;
-  }
-  
-  const formData = new FormData(formLeadsData);
-
-  let statusMessage;
-  try { 
-    const [success, result] = await handleFormData(formData);
-
-    console.log("Sucesso:", success);
-    console.log("Resposta:", result);
-
-    if (success) {
-      statusMessage = {
-        title: `Bem-vindo ${formData.get("input-name")}`,
-        content: `Olá, ${formData.get("input-name").trim().split(" ")[0]}! Ficamos felizes que gostou do projeto. Fique atento ao seu email ou WhatsApp para ficar por dentro das novidades!`,
-        buttonText: "OK"
-      }
-    } else {
-      const message = handleApiDatavalidation(result);
-      statusMessage = {
-        title: "Erro",
-        content: message,
-        buttonText: 'OK'
-      }
-    }
-  } catch (error) {
-      statusMessage = {
-        title: "Erro Interno",
-        content: "Houve uma falha de conexão, ou problemas de comunicação em nossos servidores. Pedimos q tente novamente!",
-        buttonText: "OK"
-
-      }
-  } finally {
-      isSubmiting = false;
-      await messageBox(statusMessage);
-  } 
-});
+formLeadsData.addEventListener("submit", handleSubmit);
 
 

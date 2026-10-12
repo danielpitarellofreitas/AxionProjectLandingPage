@@ -1,5 +1,7 @@
 import * as element from './DOMElements.js';
 import * as MNavigation from './navigation.js';
+import { handleFormData } from './data_process.js';
+import { setIsSubmiting } from './state.js';
 
 export function setMainHeaderVisibility(visible) {
   if (visible !== undefined) {
@@ -81,4 +83,41 @@ export function closeMessageBox() {
   setTimeout(() => {
     element.messageContainer.style.display = "none";
   }, 300);
+}
+
+/* comunicação */
+export async function handleApiRequest() {
+  const formData = new FormData(element.formLeadsData);
+  let statusMessage;
+
+  try { 
+    const [success, result] = await handleFormData(formData);
+
+    console.log("Sucesso:", success);
+    console.log("Resposta:", result);
+
+    if (success) {
+      statusMessage = {
+        title: `Bem-vindo ${formData.get("input-name")}`,
+        content: `Olá, ${formData.get("input-name").trim().split(" ")[0]}! Ficamos felizes que gostou do projeto. Fique atento ao seu email ou WhatsApp para ficar por dentro das novidades!`,
+        buttonText: "OK"
+      }
+    } else {
+      const message = handleApiDatavalidation(result);
+      statusMessage = {
+        title: "Erro",
+        content: message,
+        buttonText: 'OK'
+      }
+    }
+  } catch (error) {
+      statusMessage = {
+        title: "Erro Interno",
+        content: "Houve uma falha de conexão, ou problemas de comunicação em nossos servidores. Pedimos q tente novamente!",
+        buttonText: "OK"
+      }
+  } finally {
+      await messageBox(statusMessage);
+      setIsSubmiting(false);
+  } 
 }
