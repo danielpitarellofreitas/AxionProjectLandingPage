@@ -213,7 +213,6 @@ body {
 
 section {
   min-height: 100vh;
-  scroll-snap-align: start;
   padding-bottom: 50px !important;
 }
 
@@ -221,7 +220,6 @@ section {
 .container {
     height: 100vh;
     overflow: auto;
-    scroll-snap-type: y proximity;
     
     position: static;
     transition: all .3s ease;
