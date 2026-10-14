@@ -4,7 +4,7 @@ import { getScrollStatus } from "./navigation.js";
 
 export function handleHeaderVisibility() {
   const scrollStatus = getScrollStatus();
-  const showHeader   = actions.setMainHeaderVisibility;
+  const showHeader   = setMainHeaderVisibility;
   switch(scrollStatus) {
     case "down":
       showHeader(false);
@@ -12,5 +12,20 @@ export function handleHeaderVisibility() {
     case "up":
       showHeader(true);
       break;
+  }
+}
+
+export function selectNavButton(){
+
+  const previousLink = document.querySelector('.selected-nav-link');
+
+  if (previousLink) {
+    previousLink.classList.remove('selected-nav-link');
+  }
+
+  const currentLink = document.querySelector(`[href="${location.hash}"]`)
+  
+  if (currentLink) {
+    currentLink.classList.add('selected-nav-link');
   }
 }

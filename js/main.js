@@ -1,5 +1,5 @@
-import { selectNavButton, updateHash, getCurrentSection, handleLeadsInputs} from './navigation.js';
-import { handleHeaderVisibility } from './behavior.js'; 
+import { updateHash, getCurrentSection, handleLeadsInputs} from './navigation.js';
+import { handleHeaderVisibility, selectNavButton } from './behavior.js'; 
 import { navHome, homeSection, container, buttonBackMobileMenu, buttonHamburguerMenu, links, linksContainer, allLinks, formBoxUser, formLeadsData, formInputName, formInputEmail, formInputPhone, formInputBusiness } from './DOMElements.js';
 import { setMainHeaderVisibility, updateWindowTitle, hideMobileMenu, showMobileMenu, validateInputs, messageBox, handleApiRequest } from './actions.js';
 import { handleFormData, handleApiDatavalidation, handleFormSubmission } from './data_process.js';

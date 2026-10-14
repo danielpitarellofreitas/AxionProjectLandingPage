@@ -1,5 +1,7 @@
+import { selectNavButton } from "./behavior.js";
 import  *  as elements from "./DOMElements.js";
 import * as actions from './actions.js';
+
 
 export function getCurrentSection() {
   return new Promise(resolve => {
@@ -44,21 +46,6 @@ export async function updateHash() {
 
   history.replaceState(null, "", newHash);
   selectNavButton();
-}
-
-export function selectNavButton(){
-
-  const previousLink = document.querySelector('.selected-nav-link');
-
-  if (previousLink) {
-    previousLink.classList.remove('selected-nav-link');
-  }
-
-  const currentLink = document.querySelector(`[href="${location.hash}"]`)
-  
-  if (currentLink) {
-    currentLink.classList.add('selected-nav-link');
-  }
 }
 
 export function handleLeadsInputs(element=undefined) {
