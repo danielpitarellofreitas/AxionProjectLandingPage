@@ -1,0 +1,264 @@
+[33mcommit fb024cab0ecd8ad720730eb86198780cd246c25d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdevelop[m[33m)[m
+Merge: 8de45f7 8d99418
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Wed Oct 14 00:55:23 2026 -0300
+
+    refactor: add behavior margin on sections headers when header is visible.
+
+[33mcommit 8d99418838f525274efddea1787482780c6ad574[m[33m ([m[1;32mredesign/benefits[m[33m)[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Wed Oct 14 00:49:03 2026 -0300
+
+    redesign: adjust benefits header position
+
+[33mcommit 8de45f79eefda72d6f8830b589cbac2f2e156b5b[m[33m ([m[1;32mrefactor/behavior[m[33m)[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Wed Oct 14 00:46:57 2026 -0300
+
+    refactor: add behavior margin on sections headers when header is visible.
+
+[33mcommit 94e6ed3cb45238b8cc2868567b0da75d92fab28e[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Tue Oct 13 23:44:49 2026 -0300
+
+    refactor: move selectNavButton() from navigation.js to behavior.js
+
+[33mcommit 13ca3f37038e4fe4b0ea36d773e36da6610dcd45[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Tue Oct 13 23:38:33 2026 -0300
+
+    refactor: add behavior file as module on index.html
+
+[33mcommit 2a3a5cb209f0c0edbf6f39dbf1dfdd0ee4ee9335[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Tue Oct 13 23:34:58 2026 -0300
+
+    refactor: move handleHeaderVisibility() to behavior file.
+
+[33mcommit 54c17cc85b2fc3c43aff6912bc4532d2fe2fa341[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Tue Oct 13 23:22:37 2026 -0300
+
+    feat: add file to control the site behavior
+
+[33mcommit bdec0e659a7f2e98cb8c7eecaabb201e591c17e4[m[33m ([m[1;31morigin/develop[m[33m, [m[1;32mrefactor/benefits-redesign[m[33m)[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Tue Oct 13 17:49:28 2026 -0300
+
+    redesign: recreate benefits section design
+
+[33mcommit 283ae098fea0c7f76338072393b62cfbc102b937[m[33m ([m[1;32mrefactor/form-submission[m[33m)[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Mon Oct 12 18:16:33 2026 -0300
+
+    refactor: separate handleSubmit form validation and API request responsibilities
+
+[33mcommit 6a03d380364121255b9f1fea1656f6ebb45ae834[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Mon Oct 12 16:48:05 2026 -0300
+
+    feat: add state variables module
+
+[33mcommit 4cf4cb20ce88c3846ee0389e7c700febded7e479[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Sun Oct 11 19:53:20 2026 -0300
+
+    feat: implement message box and user interaction
+
+[33mcommit 454e268468ea1fa3bbf7a62ede3ab7eed6f39b4d[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Sun Oct 11 15:22:10 2026 -0300
+
+    feat: add details and callback to MessageBox
+
+[33mcommit fc3b1db53dc03d03305780d107cf808866670856[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Sun Oct 11 15:18:00 2026 -0300
+
+    feat: add validation to data received from API
+
+[33mcommit e4ef0d037d6cbcbb12d6e22d48a7f4fdc085550e[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Sun Oct 11 14:07:11 2026 -0300
+
+    feat: create message box responsive layout and behavior
+
+[33mcommit 90afd83e84e2ff609516739d5ee120643488ce12[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Sun Oct 11 12:38:30 2026 -0300
+
+    fix: update phone number length limit in API
+
+[33mcommit 9852f939f2fd2874eca66ee951ff4c39e261045a[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Sat Oct 10 22:09:01 2026 -0300
+
+    fix: allow phone field to be optional in API
+
+[33mcommit 3116f6b3e8a8c3676d552250ee5e7536bcb73c37[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Sat Oct 10 12:43:31 2026 -0300
+
+    feat: add validation for incoming API data
+
+[33mcommit 13b69ee453472c5036e9de78c46020fa2bcb2fe5[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Fri Oct 9 16:45:47 2026 -0300
+
+    feat: add input phone number formatting
+
+[33mcommit 9d9e1b32c8e7848f6d05becece3e4d3201d4925b[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Fri Oct 9 12:58:44 2026 -0300
+
+    feat: add dynamic styling to lead form inputs
+
+[33mcommit 1c2749711df6efc46b816e6e5dd6555c75734e50[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Fri Oct 9 10:59:08 2026 -0300
+
+    fix: configure cors to accept an origin
+
+[33mcommit 48056aea2a116013f22d211271518e29f56f3135[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Thu Oct 8 21:12:38 2026 -0300
+
+    feat: integrate frontend with API to register waitlist leads
+
+[33mcommit 05a220dedbb9a44da1f72acb6fc4ec862d755650[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Thu Oct 8 19:26:17 2026 -0300
+
+    fix: configure cors for front end
+
+[33mcommit 1574cda26a7a13d3c423d58865a6f94621696ffc[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Thu Oct 8 16:08:37 2026 -0300
+
+    fix: log database connection errors
+
+[33mcommit 419d3618ba1fc1730515b5310e60d1a2e868b966[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Thu Oct 8 15:43:48 2026 -0300
+
+    chore: remove enviroment file from repository
+
+[33mcommit 0c9b661fa5f1c052251706fbc585e42c08349d2f[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Thu Oct 8 15:37:31 2026 -0300
+
+    feat: add lead api and database schema
+
+[33mcommit 5680470fe12278958e6a994415196f8b174b2c26[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Wed Oct 7 21:38:29 2026 -0300
+
+    feat: add main page interactions and donation checkout
+
+[33mcommit 726aeb21c61847bc0f11ce083235411a84fe2622[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Wed Oct 7 18:10:06 2026 -0300
+
+    feat: add mobile hamburger menu and interactions
+
+[33mcommit bd31043d69db657d3e148ffde2f155cb368b69a9[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Wed Oct 7 18:07:43 2026 -0300
+
+    chore: remove unused icons and add project assets
+
+[33mcommit 83fb9e972d6fc1035087cb237df5c9db9d2ec00d[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Tue Oct 6 22:40:21 2026 -0300
+
+    feat: create layout and style responsive to mobile-navigation
+
+[33mcommit c5c4334b7ad1be1d50040ca6086525f968fea610[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Tue Oct 6 17:38:40 2026 -0300
+
+    feat: add dynamic tab title based on current section
+
+[33mcommit 031784ca99e6cecba6cde8f60df7ddddd8d3ddcf[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Mon Oct 5 21:24:29 2026 -0300
+
+    feat: create main footer structure and add styling and responsiveness
+
+[33mcommit 17389f67de1a7d49a543d700a75b6241bd612f9d[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Fri Oct 2 13:26:51 2026 -0300
+
+    feat: add style and responsive layout to form section.
+
+[33mcommit 8000bff2e40cd9c86d40d187d441492f9114f157[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Thu Oct 1 20:32:48 2026 -0300
+
+    feat: add responsive layout and stylesheet to about-project section.
+
+[33mcommit f93516be8f3d12b8becb666a24e1f6ecc6daa9dc[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Tue Sep 29 14:52:11 2026 -0300
+
+    feat: add style and layout to benefits section.
+
+[33mcommit 57f0d717e03d52d072085d999cda88f2b696fdda[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Wed Sep 23 19:01:03 2026 -0300
+
+    feat: add layout, style and behavior to how-it-works section
+
+[33mcommit 9ecb1db7fec2a5f3a6f0dd0f8e35c097b83ebf6a[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Wed Sep 23 16:37:02 2026 -0300
+
+    feat: update navigation and header behavior
+
+[33mcommit 3c14f8fcd6bb9e8b44ce4ad40efe404c53956c74[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Tue Sep 22 17:14:53 2026 -0300
+
+    feat: add responsive layout and styles to problems section
+
+[33mcommit 586cfc999a1e4ff2df4ff1a8f0a1014fcee3bdfb[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Mon Sep 21 17:54:36 2026 -0300
+
+    feat: add modular navigation structure.
+
+[33mcommit 6e2d30f444088a645c19cf638e07c2fef65dcd0b[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Mon Sep 21 17:33:35 2026 -0300
+
+    feat: add navbar animations and link interactions.
+
+[33mcommit ce3957eb69297d4650ef808d070576083096e68f[m[33m ([m[1;32mmaster[m[33m)[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Mon Sep 21 15:07:50 2026 -0300
+
+    feat: navigation state initialized
+
+[33mcommit bddeaec27b907d20f13018fac8df2cf581524511[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Sun Sep 20 18:08:08 2026 -0300
+
+    feat: add current section observer
+
+[33mcommit 2d75af504527e2a97615b96fe3059f4247a2f8a6[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Sun Sep 20 18:04:37 2026 -0300
+
+    feat: add styles, animations and responsive layout to home section
+
+[33mcommit 7a2be259a35f311cdf76632485f26fc140e9f171[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Sun Sep 20 17:52:06 2026 -0300
+
+    feat: add menu button for mobile version
+
+[33mcommit 60ef9d4bddf0f5e42eb979c04abbb970832a4a86[m
+Author: Daniel Pitarello <danielpitarellofreitas@gmail.com>
+Date:   Sat Sep 19 17:26:52 2026 -0300
+
+    feat: create first landing page structure

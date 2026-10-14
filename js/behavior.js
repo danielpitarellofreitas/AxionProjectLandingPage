@@ -1,16 +1,18 @@
+import { getCurrentSection, getScrollStatus } from "./navigation.js";
 import { setMainHeaderVisibility } from "./actions.js";
-import { getScrollStatus } from "./navigation.js";
+import { container, mainHeader } from "./DOMElements.js";
 
 
-export function handleHeaderVisibility() {
+export async function handleHeaderVisibility() {
   const scrollStatus = getScrollStatus();
   const showHeader   = setMainHeaderVisibility;
+
   switch(scrollStatus) {
     case "down":
       showHeader(false);
       break;
     case "up":
-      showHeader(true);
+      showHeader(true); 
       break;
   }
 }

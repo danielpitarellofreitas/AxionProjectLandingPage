@@ -1,3 +1,5 @@
+
+
 export const allSections = document.querySelectorAll("section");
 export const homeSection = document.querySelector("#home");
 export const problemsSection = document.querySelector("#problems");

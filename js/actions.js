@@ -4,7 +4,15 @@ import { handleFormData } from './data_process.js';
 import { setIsSubmiting } from './state.js';
 
 export function setMainHeaderVisibility(visible) {
+  const currentElementReference = element.container.querySelector("header");
+
   if (visible !== undefined) {
+    console.log(currentElementReference)
+    if(visible != true) {
+      currentElementReference.style.marginTop = "0px";
+    } else {
+      currentElementReference.style.marginTop = "70px";
+    }
     element.mainHeader.classList.toggle("hide", !visible)
   } else {
     element.mainHeader.classList.toggle("hide");

@@ -69,7 +69,11 @@ window.addEventListener("load", start);
 window.addEventListener("wheel", handleWheel);
 window.addEventListener("hashchange", selectNavButton);
 
-container.addEventListener("click", () => {setMainHeaderVisibility(undefined)});
+let showHeader = true;
+container.addEventListener("click", () => {
+  showHeader = !showHeader;
+  setMainHeaderVisibility(showHeader);
+});
 container.addEventListener("scroll", handleWheel);
 
 buttonBackMobileMenu.addEventListener("click", hideMobileMenu);

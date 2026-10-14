@@ -1,7 +1,5 @@
 import { selectNavButton } from "./behavior.js";
 import  *  as elements from "./DOMElements.js";
-import * as actions from './actions.js';
-
 
 export function getCurrentSection() {
   return new Promise(resolve => {
