@@ -1,8 +1,8 @@
-import { updateHash, getCurrentSection, handleLeadsInputs, getScrollStatus} from './navigation.js';
+import { updateHash, getScrollStatus} from './navigation.js';
 import { selectNavButton } from './behavior.js'; 
-import { navHome, homeSection, container, buttonBackMobileMenu, buttonHamburguerMenu, links, linksContainer, allLinks, formBoxUser, formLeadsData, formInputName, formInputEmail, formInputPhone, formInputBusiness, mobileNavigation } from './DOMElements.js';
-import { setMainHeaderVisibility, updateWindowTitle, hideMobileMenu, showMobileMenu, validateInputs, messageBox, handleApiRequest } from './actions.js';
-import { handleFormData, handleApiDatavalidation, handleFormSubmission } from './data_process.js';
+import { navHome, homeSection, container, buttonBackMobileMenu, buttonHamburguerMenu, allLinks, formBoxUser, formLeadsData, mobileNavigation, links } from './DOMElements.js';
+import { setMainHeaderVisibility, updateWindowTitle, hideMobileMenu, showMobileMenu, messageBox, handleApiRequest } from './actions.js';
+import { handleFormSubmission } from './data_process.js';
 import { isSubmiting, setIsSubmiting } from './state.js'
 
 let showHeader;

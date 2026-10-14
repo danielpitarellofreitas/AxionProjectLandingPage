@@ -1,6 +1,3 @@
-import { getCurrentSection, getScrollStatus } from "./navigation.js";
-import { setMainHeaderVisibility } from "./actions.js";
-import { container, mainHeader } from "./DOMElements.js";
 
 export function selectNavButton(){
 
