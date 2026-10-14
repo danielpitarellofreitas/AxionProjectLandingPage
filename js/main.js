@@ -1,10 +1,27 @@
-import { updateHash, getCurrentSection, handleLeadsInputs} from './navigation.js';
-import { handleHeaderVisibility, selectNavButton } from './behavior.js'; 
-import { navHome, homeSection, container, buttonBackMobileMenu, buttonHamburguerMenu, links, linksContainer, allLinks, formBoxUser, formLeadsData, formInputName, formInputEmail, formInputPhone, formInputBusiness } from './DOMElements.js';
+import { updateHash, getCurrentSection, handleLeadsInputs, getScrollStatus} from './navigation.js';
+import { selectNavButton } from './behavior.js'; 
+import { navHome, homeSection, container, buttonBackMobileMenu, buttonHamburguerMenu, links, linksContainer, allLinks, formBoxUser, formLeadsData, formInputName, formInputEmail, formInputPhone, formInputBusiness, mobileNavigation } from './DOMElements.js';
 import { setMainHeaderVisibility, updateWindowTitle, hideMobileMenu, showMobileMenu, validateInputs, messageBox, handleApiRequest } from './actions.js';
 import { handleFormData, handleApiDatavalidation, handleFormSubmission } from './data_process.js';
 import { isSubmiting, setIsSubmiting } from './state.js'
 
+let showHeader;
+
+async function handleHeaderVisibility() {
+  const scrollStatus = getScrollStatus();
+  const setHeaderVisible   = setMainHeaderVisibility;
+
+  switch(scrollStatus) {
+    case "down":
+      showHeader = false;
+      break;
+    case "up":
+      showHeader = true;
+      break;
+  }
+  
+  setHeaderVisible(showHeader)
+}
 
 function handleWheel() {
   updateHash();
@@ -13,6 +30,7 @@ function handleWheel() {
 }
 
 function start() {
+  showHeader = true
   window.history.scrollRestoration = "manual";
 
   homeSection.scrollIntoView({
@@ -69,11 +87,14 @@ window.addEventListener("load", start);
 window.addEventListener("wheel", handleWheel);
 window.addEventListener("hashchange", selectNavButton);
 
-let showHeader = true;
 container.addEventListener("click", () => {
+  if(!mobileNavigation.classList.contains("hide")) 
+    return;
+
   showHeader = !showHeader;
   setMainHeaderVisibility(showHeader);
 });
+
 container.addEventListener("scroll", handleWheel);
 
 buttonBackMobileMenu.addEventListener("click", hideMobileMenu);
@@ -82,6 +103,9 @@ buttonHamburguerMenu.addEventListener("click", showMobileMenu);
 
 links.forEach((link) => {
   link.addEventListener("click", () => {
+    showHeader = !showHeader;
+    
+    setMainHeaderVisibility(showHeader);
     hideMobileMenu();
   })
 });
