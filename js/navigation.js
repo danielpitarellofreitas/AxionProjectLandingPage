@@ -46,19 +46,6 @@ export async function updateHash() {
   selectNavButton();
 }
 
-export function handleHeaderVisibility() {
-  const scrollStatus = getScrollStatus();
-  const showHeader   = actions.setMainHeaderVisibility;
-  switch(scrollStatus) {
-    case "down":
-      showHeader(false);
-      break;
-    case "up":
-      showHeader(true);
-      break;
-  }
-}
-
 export function selectNavButton(){
 
   const previousLink = document.querySelector('.selected-nav-link');
