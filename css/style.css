@@ -393,11 +393,11 @@ section {
 }
 
 .problems-content header {
-  margin-bottom: 49px;
+ margin-top: var(--height-header-desktop);
 }
 
 .problems-content header .problems-title{
-  margin-top: var(--height-header-desktop);
+ 
 
   text-align: center;
   font-size: clamp(1.0rem, 4vw, 1.9rem);
@@ -623,11 +623,7 @@ section {
 }
 
 .benefits header {
-  position: absolute;
-
-  top: 0;
-
-  margin-top: calc(var(--height-header-desktop) + 12px);
+  
 }
 
 .benefits header h2 {
@@ -660,7 +656,7 @@ section {
   
   padding: 20px;
 
-  margin-top: 40px;
+  margin-top: 60px;
 
   background-color: transparent;
 }
@@ -693,7 +689,7 @@ section {
 .benefits .what-use ul .cards {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 3px;
  
   justify-content: center;
 
@@ -766,6 +762,14 @@ section {
   fill: white;
 }
 
+.benefits .what-use ul .cards .benefits-text {
+  color: #8e8d8d;
+}
+
+.benefits .what-use ul .cards .benefits-title {
+  margin-top: 25px;
+}
+
 .benefits .interessed-container {
   display: flex;
   flex-direction: row;
@@ -803,6 +807,13 @@ section {
     0 8px 24px rgba(0, 0, 0, 0.12);
 
   text-align: center;
+}
+
+.benefits .interessed-container .text-group {
+  display: flex;
+  flex-direction: column;
+
+  text-align: start;
 }
 
 .benefits .interessed-container .button-learn-more {
@@ -1454,6 +1465,11 @@ section {
   }
 
   .benefits-content {
+    flex-direction: column;
+  }
+
+  .benefits .benefits-content .what-use .list-why-use .grid-cards {
+    display: flex;
     flex-direction: column;
   }
 
