@@ -24,6 +24,12 @@ export const buttonContributte    = document.getElementById("button-contributte"
 export const buttonHamburguerMenu = document.getElementById("hamburguer-button");
 
 
+export const aboutProjSection  = document.querySelector(".about-project");
+export const aboutProjContent  = aboutProjSection.querySelector(".about-project-content");
+export const aboutProjArrow    = aboutProjContent.querySelector(".arrow-down");
+export const aboutProjText     = aboutProjContent.querySelector(".text");
+
+
 export const formLeadsData     = document.querySelector('#form-data');
 export const formBoxUser       = formLeadsData.querySelectorAll(".box-user");
 

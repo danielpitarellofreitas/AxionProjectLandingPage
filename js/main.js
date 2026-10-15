@@ -1,6 +1,6 @@
 import { updateHash, getScrollStatus} from './navigation.js';
 import { selectNavButton } from './behavior.js'; 
-import { navHome, homeSection, container, buttonBackMobileMenu, buttonHamburguerMenu, allLinks, formBoxUser, formLeadsData, mobileNavigation, links } from './DOMElements.js';
+import { navHome, homeSection, container, buttonBackMobileMenu, buttonHamburguerMenu, allLinks, formBoxUser, formLeadsData, mobileNavigation, links, aboutProjSection, aboutProjText, aboutProjArrow } from './DOMElements.js';
 import { setMainHeaderVisibility, updateWindowTitle, hideMobileMenu, showMobileMenu, messageBox, handleApiRequest } from './actions.js';
 import { handleFormSubmission } from './data_process.js';
 import { isSubmiting, setIsSubmiting } from './state.js'
@@ -94,11 +94,10 @@ container.addEventListener("click", () => {
   showHeader = !showHeader;
   setMainHeaderVisibility(showHeader);
 });
-
 container.addEventListener("scroll", handleWheel);
 
-buttonBackMobileMenu.addEventListener("click", hideMobileMenu);
 
+buttonBackMobileMenu.addEventListener("click", hideMobileMenu);
 buttonHamburguerMenu.addEventListener("click", showMobileMenu);
 
 links.forEach((link) => {
@@ -127,12 +126,6 @@ allLinks.forEach(link => {
 });
 
 
-// em dev
-//formBoxUser.forEach((element))
-//formBoxUser.addEventListener("input", (event) => {
-// console.log(event.target.id)
-//});
-
 formBoxUser.forEach((boxUser) => {
   const input = boxUser.firstElementChild.tagName == "INPUT" ? boxUser.firstElementChild : false;
   if(!input) 
@@ -152,4 +145,14 @@ formBoxUser.forEach((boxUser) => {
 
 formLeadsData.addEventListener("submit", handleSubmit);
 
+
+aboutProjText.addEventListener("scroll", () => {
+  const scrollEndend = aboutProjText.clientHeight + aboutProjText.scrollTop >= aboutProjText.scrollHeight -19;
+  
+  if(scrollEndend) {
+    aboutProjArrow.style.display = "none";
+  } else {
+    aboutProjArrow.style.display = "flex";  
+  }
+});
 
