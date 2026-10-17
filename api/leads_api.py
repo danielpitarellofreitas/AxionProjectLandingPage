@@ -51,5 +51,5 @@ def save_lead(lead: Lead):
     return {"message": f"Lead {lead.name} has been saved!"}
 
   except psycopg.OperationalError as dbError:
-    return {'message': str(dbError)}
+    return {'message': "error D23"}
   

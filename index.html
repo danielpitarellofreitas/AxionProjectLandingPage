@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="./assets/images/logo-icon-image.png" type="image/x-icon">
-    <title>Projeto Axion | O Futuro da Gestão de Estoque.</title>]
+    <title>Projeto Axion | O Futuro da Gestão de Estoque.</title>
     <meta name="description" content="Conheça o Projeto Axion. Uma ideia para simplificar a gestão de estoque. Cadastre seu interesse e acompanhe o desenvolvimento do projeto">
 </head>
 
@@ -29,8 +29,9 @@
                 <li class="nav-links"><a id="nav-home" href="#home">Início</a></li>
                 <li class="nav-links"><a id="nav-problems" href="#problems">Problemas</a></li>
                 <li class="nav-links"><a id="nav-how-it-works" href="#how-it-works">Como Funciona?</a></li>
-                <li class="nav-links"><a id="nav-benefits" href="#benefits">Beneficíos</a></li>
-                <li class="nav-interessed"><a id="nav-problems" href="#problems">Tenho Interesse</a></li>
+                <li class="nav-links"><a id="nav-benefits" href="#benefits">Benefícios</a></li>
+                <li class="nav-privacy"><a id="nav-terms" href="./pages/terms.html">Privacidade</a></li>
+                <li class="nav-register"><a id="nav-interessed" href="#form-section">Cadastre-se</a></li>
             </ul>
         </nav>
         
@@ -57,6 +58,7 @@
                     <a href="#problems" class="link">Problemas</a>
                     <a href="#benefits" class="link">Benefícios</a>
                     <a href="#about-project" class="link">Sobre o Projeto</a>
+                    <a href="./pages/terms.html" class="link">política de privacidade</a>
                 </aside> 
             
                 <aside class="links">
@@ -84,10 +86,16 @@
                     intuitiva. Tenha mais <strong>controle</strong> sobre seu estoque e simplifique sua
                     <strong>rotina</strong> de gestão.
                 </p>
+                <div class="hero-group-button">
+                    <a class="hero-button" id="button-interessed" href="problems">
+                        Tenho Interesse
+                    </a>
+                    <a class="hero-see-more" id="button-interessed" href="#problems">
+                        Ver Mais 
+                    </a>
+                </div>
 
-                <a class="hero-button" id="button-interessed" href="#problems">
-                    Tenho Interesse
-                </a>
+                
             </article>
             <aside class="hero-image">
                 <img src="assets/images/isometric_art_stock_manager.png" alt="Protótipo conceitual IMS isometricamente criado...">
@@ -167,7 +175,7 @@
         <section id="benefits" class="benefits">
             <header>
                 <h2>
-                    BENEFICÍOS
+                    BENEFÍCIOS
                 </h2>
                 <p class="title-what-use">
                         Por que usar nosso IMS
@@ -253,7 +261,7 @@
             <article class="about-project-content">
                 <div class="text">
                     <p class="text-about-project">
-                        Estamos desenvolvendo um sistema para facilitar o dia a dia de lojistas e atendentes. Nossa proposta é reduzir grande parte das atividades que ainda são feitas manualmente, poupando tempo e eliminando aquela “chatisse” de ter que:
+                        Estamos desenvolvendo um sistema para facilitar o dia a dia de lojistas e atendentes. Nossa proposta é reduzir grande parte das atividades que ainda são feitas manualmente, poupando tempo e eliminando aquela “chatice” de ter que:
                         
                         <ul>
                             <li>Anotar e guardar informações de cada produto no papel ou depender da memória.</li>
@@ -307,13 +315,13 @@
                 <h1>
                     Faça Parte!
                 </h1>
-                <p>
-                    Deixe seu contato, e avisaremos quando houver novidades sobre o projeto!
+                <p style="max-width: 400px;">
+                    Deixe seu contato, e receba acesso antecipado, e teste gratuito ao lançar.
                 </p>
             </header>
             <div class="form-section-content">
                 <h2 class="form-title">Seja notificado</h2>
-                <form action="post" name="form_data" id="form-data">
+                <form action="" method="post" name="form_data" id="form-data">
                     <div class="box-user">
                         <input type="text" name="input-name" id="input-name" minlength="2" maxlength="254" required>
                         <label for="input-name">Nome</label>
@@ -326,7 +334,7 @@
 
                     <div class="box-user">
                         <input type="tel" name="input-phone" id="input-phone" maxlength="20">
-                        <label for="input-phone">Telefone</label>
+                        <label for="input-phone">Telefone (Opcional)</label>
                     </div>
                     
                     <div class="box-user">
@@ -339,8 +347,10 @@
                     </div>
 
                     <div class="box-user">
-                        <button id="send-form" class="send-form">Enviar</button>
+                        <button id="send-form" class="send-form" type="submit">Enviar</button>
                     </div>
+
+                    <p>Preocupado com sua privacidade? Veja como utilizamos <a href="./pages/terms.html">Seus dados</a></p>
                 </form>
             </div>
         </section>
@@ -362,8 +372,9 @@
                 <article class="navigation">
                      <aside class="links">
                         <h4>Navegação</h4>
+                        <a href="./pages/terms.html">Privacidade</a>
                         <a href="#home" class="link">Início</a>
-                        <a href="#Problems" class="link">Problemas</a>
+                        <a href="#problems" class="link">Problemas</a>
                         <a href="#benefits" class="link">Benefícios</a>
                         <a href="#about-project" class="link">Sobre o Projeto</a>
                     </aside> 
@@ -372,7 +383,7 @@
                         <h4>Projeto</h4>
                         <a href="#about-project" class="link">Sobre o projeto</a>
                         <a href="#how-it-works" class="link">Como Funciona</a>
-                        <a href="#" class="link">Apoie o projeto</a>
+                        <a href="https://donate.stripe.com/6oUdR82YH4nWdRx3LXaZi00" class="link">Apoie o projeto</a>
                         <a href="#form-section" class="link">Quero ser avisado</a>
                     </aside> 
                 </article>   
