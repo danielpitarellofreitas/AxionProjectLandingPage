@@ -1566,6 +1566,7 @@ section {
 
   .hero .hero-content .hero-group-button {
     flex-direction: column;
+    align-items: center;
   }
 
   .hero .hero-content .hero-group-button .hero-button {
