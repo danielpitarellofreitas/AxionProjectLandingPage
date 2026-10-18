@@ -23,7 +23,8 @@ app.add_middleware(
     "http://127.0.0.1:3000",
     "http://localhost:3000",
     "http://127.0.0.1",
-    "http://localhost"
+    "http://localhost",
+    "https://axionproject.axion-ims.workers.dev"
   ],
   
   allow_methods=["*"],
